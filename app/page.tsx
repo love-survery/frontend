@@ -234,10 +234,13 @@ export default function SurveyPage() {
     }
 
     try {
-      const res = await axios.post("http://localhost:4000/submit", {
-        token,
-        answers,
-      });
+      const res = await axios.post(
+        "https://love-survery-api.injun.dev/submit",
+        {
+          token,
+          answers,
+        }
+      );
 
       console.log("서버 응답:", res.data);
       setSubmitted(true); // 제출 완료 상태로 변경
@@ -330,7 +333,7 @@ export default function SurveyPage() {
 
   const downloadCSV = async (token: string) => {
     try {
-      const res = await fetch("http://localhost:4000/export", {
+      const res = await fetch("https://love-survery-api.injun.dev/export", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -368,12 +371,15 @@ export default function SurveyPage() {
 
                   // 관리자 여부 확인 요청
                   try {
-                    const res = await fetch("http://localhost:4000/export", {
-                      method: "GET",
-                      headers: {
-                        Authorization: `Bearer ${googleToken}`,
-                      },
-                    });
+                    const res = await fetch(
+                      "https://love-survery-api.injun.dev/export",
+                      {
+                        method: "GET",
+                        headers: {
+                          Authorization: `Bearer ${googleToken}`,
+                        },
+                      }
+                    );
 
                     if (res.status === 200) {
                       setIsAdmin(true);
