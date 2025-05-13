@@ -1,5 +1,5 @@
 # 1. 빌드 단계
-FROM node:20-alpine AS builder
+FROM node:slim AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY . .
 RUN pnpm build
 
 # 2. 실행 단계
-FROM node:20-alpine AS runner
+FROM node:slim AS runner
 
 WORKDIR /app
 
@@ -27,7 +27,7 @@ WORKDIR /app
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # 환경 변수 설정
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # 필요한 파일만 복사
 COPY --from=builder /app/public ./public
@@ -48,7 +48,7 @@ USER nextjs
 EXPOSE 3000
 
 # 환경 변수: 호스트 설정 (컨테이너 외부에서 접근 가능하도록)
-ENV HOSTNAME "0.0.0.0"
+ENV HOSTNAME=0.0.0.0
 
 # 서버 실행
 CMD ["node", "server.js"]
