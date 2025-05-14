@@ -686,7 +686,7 @@ export default function SurveyPage() {
         return (
           <div className="w-full space-y-6">
             <CardTitle>
-              최근 1년간 소개팅이나 만남 앱을 통한 만남 횟수를 입력해주세요.
+              최근 1년간 받은 소개팅/만남 앱을 사용한 횟수를 입력해주세요.
             </CardTitle>
             <div className="w-full space-y-2">
               <Input
