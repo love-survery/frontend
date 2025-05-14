@@ -362,8 +362,17 @@ export default function SurveyPage() {
     switch (currentStep) {
       case -1:
         return (
-          <div className="mt-4">
+          <div className="space-y-6 text-center">
+            <CardTitle className="text-2xl font-bold">
+              AI 기반 연애 횟수 예측 설문조사
+            </CardTitle>
+             <p className="text-gray-700 text-sm leading-relaxed">
+    이 설문은 <span className="font-semibold">AI 연애 확률 예측 서비스</span>를 위한 데이터 수집 목적입니다.<br />
+    로그인 시 제공되는 <span className="font-semibold">이메일은 중복 응답 방지</span>를 위해서만 사용되며,<br />
+    절대 다른 용도로 사용되지 않습니다.
+  </p>
             <GoogleLogin
+              
               onSuccess={async (credentialResponse) => {
                 if (credentialResponse.credential) {
                   const googleToken = credentialResponse.credential;
@@ -399,6 +408,16 @@ export default function SurveyPage() {
               onError={() => {
                 console.log("로그인 실패");
               }}
+              useOneTap={false}
+             render={(renderProps) => (
+      <button
+        onClick={renderProps.onClick}
+        disabled={renderProps.disabled}
+        className="w-full h-12 rounded-full shadow-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+      >
+        🚀 Google 계정으로 설문 시작하기
+      </button>
+    )}
             />
 
             {isAdmin && token && (
