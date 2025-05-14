@@ -366,15 +366,12 @@ export default function SurveyPage() {
             <CardTitle className="className="text-2xl font-bold">
               AI 기반 연애 횟수 예측 설문조사
             </CardTitle>
-              <p className="text-gray-600 text-sm leading-relaxed">
-    이 설문은 <span className="font-semibold text-black">AI 연애 확률 예측 서비스</span>를 위한<br />
-    데이터 수집 목적으로 진행됩니다.
-    <br />
-    <span className="text-blue-600 font-medium">Google 계정</span>은{" "}
-    <span className="font-semibold">중복 응답 방지용</span>으로만 사용되며,
-    <br />
-    다른 용도로는 절대 사용되지 않습니다.
+              <p className="text-gray-700 text-sm leading-relaxed">
+    이 설문은 <span className="font-semibold">AI 연애 확률 예측 서비스</span>를 위한 데이터 수집 목적입니다.<br />
+    로그인 시 제공되는 <span className="font-semibold">이메일은 중복 응답 방지</span>를 위해서만 사용되며,<br />
+    절대 다른 용도로 사용되지 않습니다.
   </p>
+
             <GoogleLogin
               
               onSuccess={async (credentialResponse) => {
@@ -417,7 +414,7 @@ export default function SurveyPage() {
       <button
         onClick={renderProps.onClick}
         disabled={renderProps.disabled}
-        className="w-full h-12 rounded-full shadow-md bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold hover:from-blue-600 hover:to-indigo-600 transition"
+        className="w-full h-12 rounded-full shadow-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
       >
         🚀 Google 계정으로 설문 시작하기
       </button>
