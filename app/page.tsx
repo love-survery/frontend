@@ -431,6 +431,15 @@ export default function SurveyPage() {
               >
                 📥 설문 응답 CSV 다운로드 (관리자 전용)
               </Button>
+            <Button
+      onClick={() => {
+        localStorage.setItem("adminToken", token); // 🔐 토큰 저장
+        window.location.href = "/admin";
+      }}
+      className="w-full mt-2 bg-red-600 hover:bg-red-700 text-white"
+    >
+      🛠 데이터베이스 관리하기
+    </Button>
             )}
           </div>
         );
