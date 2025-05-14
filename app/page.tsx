@@ -362,8 +362,8 @@ export default function SurveyPage() {
     switch (currentStep) {
       case -1:
         return (
-          <div className="max-w-md w-full mx-auto p-8 bg-white rounded-2xl shadow-xl space-y-6 text-center border border-gray-100">
-            <CardTitle className="text-3xl font-bold text-gray-800">
+          <div className="space-y-6 text-center">
+            <CardTitle className="className="text-2xl font-bold">
               AI 기반 연애 횟수 예측 설문조사
             </CardTitle>
               <p className="text-gray-600 text-sm leading-relaxed">
