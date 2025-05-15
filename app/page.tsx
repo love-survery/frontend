@@ -432,15 +432,11 @@ export default function SurveyPage() {
                 📥 설문 응답 CSV 다운로드 (관리자 전용)
               </Button>
             <Button
-      onClick={() => {
-        localStorage.setItem("adminToken", token); // 🔐 토큰 저장
-        window.location.href = "/admin";
-      }}
-      className="w-full mt-2 bg-red-600 hover:bg-red-700 text-white"
+      onClick={() => router.push("/admin")}
+      className="w-full shadow-md bg-gray-800 hover:bg-gray-900 text-white font-semibold"
     >
-      🛠 데이터베이스 관리하기
+      🛠️ 데이터베이스 관리하기
     </Button>
-            )}
           </div>
         );
       case 0:
