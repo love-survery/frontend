@@ -437,7 +437,8 @@ export default function SurveyPage() {
                >
                 🛠️ 데이터베이스 관리하기
              </Button>
-          </div>
+          
+          )}
         );
       case 0:
         return (
