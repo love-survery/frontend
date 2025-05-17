@@ -425,20 +425,22 @@ export default function SurveyPage() {
             />
 
             {isAdmin && token && (
-              <Button
-                onClick={() => downloadCSV(token)}
-                className="w-full mt-4"
-              >
-                📥 설문 응답 CSV 다운로드 (관리자 전용)
-              </Button>
-              <Button
-                onClick={() => downloadCSV(token)}
-                  className="w-full mt-4"
-               >
-                🛠️ 데이터베이스 관리하기
-             </Button>
-          
-          )}
+  <>
+    <Button
+      onClick={() => downloadCSV(token)}
+      className="w-full mt-4"
+    >
+      📥 설문 응답 CSV 다운로드 (관리자 전용)
+    </Button>
+    <Button
+      onClick={() => downloadCSV(token)}
+      className="w-full mt-4"
+    >
+      🛠️ 데이터베이스 관리하기
+    </Button>
+  </>
+)}
+
         );
       case 0:
         return (
